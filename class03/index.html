@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div>{{firstNumber}}</div>
+        <span v-if="firstNumber > 5">congrats, it's over 5 points</span>
+        <hr>
+        <h1>Names list:</h1>
+        <ul>
+            <li v-bind:key="index" v-for="(person, index) in people">{{person.first_name}} {{person.last_name}}: {{person.age}}</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    const app = new Vue({
+        el: "#app", 
+        data:{
+            firstNumber: 0, 
+            people: [
+                {first_name: "Ricardo", last_name:"Tavares", age: 20},
+                {first_name: "Miguel", last_name:"Pereira", age: 30}, 
+            ]
+
+        }
+    });
+</script>
+</html>
