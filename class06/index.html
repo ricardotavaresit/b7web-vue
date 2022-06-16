@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-         
+         {{show()}}
     </div>
 </body>
 
@@ -18,8 +18,14 @@
     const app = new Vue({
         el: "#app", 
         data:{
-          
+          name:"Ricardo Tavares",
+          age:"90"
         }, 
+        methods:{
+            show(){
+                return `Hi, ${this.name}, you are ${this.age} years old.` 
+            }
+        }
     });
 </script>
 </html>
