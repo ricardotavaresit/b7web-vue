@@ -10,7 +10,14 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{title}}</h1>
+        <input type="text" v-model="texto">
+        <span>{{texto}}</span>
+        <hr>
+        <span>{{num1}}</span>
+        <input type="text" v-model="num2">
+        <span>{{num1+parseInt(num2)}}</span>
+        <span>{{num3}}</span>
+
     </div>
 </body>
 
@@ -18,8 +25,10 @@
     const app = new Vue({
         el: "#app", 
         data:{
-            title: "Class 04",
-           
+            texto: "Text example",
+            num1:10,
+            num2:15,
+            num3:0,
         }
     });
 </script>
