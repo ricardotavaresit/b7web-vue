@@ -5,6 +5,7 @@
 - Class 01: What is th Vue
 - Class 02: Hello world in Vue JS
 - Class 03: Use v-if and v-for in Vue JS
+- Class 04: Use v-model in Vue JS
 
 ## Technologies used
 - VueJS;
