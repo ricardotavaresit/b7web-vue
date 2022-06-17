@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7Web - VueJS - Class 06</title>
+    <title>B7Web - VueJS - Class 07</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-
 </head>
 <body>
     <div id="app">
@@ -17,9 +16,7 @@
                 <h4 v-text="country.continent"></h4>
                 <img v-bind:src="'./assets/images/'+country.flag"  /> 
             </div>
-
         </div>
-    
     </div>
 </body>
 
@@ -35,9 +32,6 @@
             {name:"United Kingdom", continent:"Europe", flag: "uk.jpg"}, 
           ]
         }, 
-        methods:{
-            
-        }
     });
 </script>
 
@@ -54,6 +48,5 @@
     h1, h2, h4{
         text-align: center;
     }
-
 </style>
 </html>
