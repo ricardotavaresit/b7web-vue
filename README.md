@@ -9,6 +9,7 @@
 - Class 05: Sum exercise in Vue JS
 - Class 06: Use methods in Vue JS
 - Class 07: Flow control 1/2 in Vue JS
+- Class 08: Flow control 2/2 in Vue JS
 
 ## Technologies used
 - VueJS;
