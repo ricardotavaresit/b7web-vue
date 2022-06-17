@@ -12,7 +12,7 @@
         <h1>Countries List - Component</h1>
         <div class="container">
             <div v-for="country in countries"> 
-                <pais-component v-bind:country="country"/>
+                <country-component v-bind:country="country"/>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 <script>
 
-    Vue.component("pais-component", {
+    Vue.component("country-component", {
         props:["country"],
         template: ` <div>
                         <h2>{{ country.name }}</h2>
