@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7Web - VueJS - Class 07</title>
+    <title>B7Web - VueJS - Class 08</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
     <div id="app">
-        <h1>Countries List</h1>
+        <h1>Countries List - Component</h1>
         <div class="container">
             <div v-for="country in countries"> 
-                <h2 v-text="country.name"></h2>
-                <h4 v-text="country.continent"></h4>
-                <img v-bind:src="'./assets/images/'+country.flag"  /> 
+                <pais-component v-bind:country="country"/>
             </div>
-
-            <portugal />
         </div>
     </div>
 </body>
 
 <script>
-    import dssd from "./../"
- 
+
+    Vue.component("pais-component", {
+        props:["country"],
+        template: ` <div>
+                        <h2>{{ country.name }}</h2>
+                        <h4>{{ country.continent }}</h4>
+                        <img v-bind:src="'./assets/images/' + country.flag "/>
+                    </div>`
+    });
 
     const app = new Vue({
         el: "#app", 
@@ -36,8 +39,9 @@
             {name:"Spain", continent:"Europe", flag: "es.jpg"}, 
             {name:"United Kingdom", continent:"Europe", flag: "uk.jpg"}, 
           ]
-        }, 
+        } 
     });
+
 </script>
 
 <style>
