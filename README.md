@@ -10,6 +10,7 @@
 - Class 06: Use methods in Vue JS
 - Class 07: Flow control 1/2 in Vue JS
 - Class 08: Flow control 2/2 in Vue JS
+- Class 09: Components in Vue JS
 
 ## Technologies used
 - VueJS;
