@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Web - VueJS - Class 07</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Countries List</h1>
+        <div class="container">
+            <div v-for="country in countries"> 
+                <h2 v-text="country.name"></h2>
+                <h4 v-text="country.continent"></h4>
+                <img v-bind:src="'./assets/images/'+country.flag"  /> 
+            </div>
+
+            <portugal />
+        </div>
+    </div>
+</body>
+
+<script>
+    import dssd from "./../"
+ 
+
+    const app = new Vue({
+        el: "#app", 
+        data:{
+          countries:[
+            {name:"Portugal", continent:"Europe", flag: "pt.jpg"}, 
+            {name:"Brazil", continent:"American", flag: "br.jpg"}, 
+            {name:"Germany", continent:"Europe", flag: "gm.jpg"}, 
+            {name:"Spain", continent:"Europe", flag: "es.jpg"}, 
+            {name:"United Kingdom", continent:"Europe", flag: "uk.jpg"}, 
+          ]
+        }, 
+    });
+</script>
+
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container div{
+        margin: 0 20px
+    }
+
+    h1, h2, h4{
+        text-align: center;
+    }
+</style>
+</html>
