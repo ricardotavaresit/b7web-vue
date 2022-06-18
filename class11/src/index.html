@@ -10,26 +10,21 @@
 <body>
     <div id="app">
         <header class="header">
-
-            
-
+            {{title}}
+            <p v-html="sub_title"></p>
         </header>
         <section class="container">
             <section class="container__content">
-
-                {{name}}
-
+                {{loading ? "Sim" : "Não"}}
             </section>
-            <aside class="container__sidebar">
-
-                
-
+            <aside class="container__sidebar" >
+                <span v-html="name"></span>
+                {{ text }} <br>
+                {{ text.split("").reverse().join("") }}
             </aside>
         </section>
         <footer class="footer">
-
-            
-
+            <span v-text="footer"></span>
         </footer>
     </div>
 </body>
@@ -39,14 +34,19 @@
     const app = new Vue({
         el: "#app", 
         data:{
-            name: "Ricardo Tavares"
+            title: "Page title",
+            sub_title: "This is the <strong>subitle</strong> of thepage",
+            footer: "Page footer",
+            name: "<div class='rotate'>Ricardo</div>", 
+            text: "Miguel", 
+            loading: true
         }, 
     });
 
 </script>
 
 <style>
-    body {
+body {
 	font-family: Arial;
 	font-size:14px;
 }
@@ -79,6 +79,10 @@
 	min-height:100px;
 	background-color:#EEE;
 }
+
+.rotate { transform: rotate(-90deg)};
+
+
 </style>
 
 </html>
