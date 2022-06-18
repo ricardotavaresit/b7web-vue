@@ -9,21 +9,44 @@
 </head>
 <body>
     <div id="app">
-        <h1 v-text="name"></h1>
+        <h1>{{name}}</h1>
     </div>
 </body>
 
 <script>
 
- 
     const app = new Vue({
         el: "#app", 
         data:{
-            name: "Ricardo"
-        } 
+            name: "Ricardo Tavares"
+        }, 
+        beforeCreate:function(){
+            alert("beforeCreate: " + this.name);
+        }, 
+        created:function(){
+            alert("created: " + this.name);
+        }, 
+        beforeMount:function(){
+            alert("beforeMount: " + this.name);
+        },
+        mounted:function(){
+            alert("mounted: " + this.name);
+        },
+        beforeUpdate:function(){
+            alert("beforeUpdate: " + this.name);
+        },
+        updated:function(){
+            alert("updated: " + this.name);
+        },
+        beforeDesdroy:function(){
+            alert("beforeDesdroy: " + this.name);
+        },
+        desdroy:function(){
+            alert("desdroy: " + this.name);
+        }
+
     });
 
 </script>
-
 
 </html>
