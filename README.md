@@ -12,7 +12,8 @@
 - Class 08: Flow control 2/2 in Vue JS
 - Class 09: Components in Vue JS
 - Class 10: Life cycle in Vue JS
-- Class 11: Template Interpolation in Vue JS
+- Class 11: Template: interpolation in Vue JS
+- Class 12: Template: directive shortcuts in Vue JS
 
 ## Technologies used
 - VueJS;
