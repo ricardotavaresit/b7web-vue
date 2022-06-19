@@ -15,6 +15,7 @@
 - Class 11: Template: interpolation in Vue JS
 - Class 12: Template: directive in Vue JS
 - Class 13: Template: directive shortcuts in Vue JS
+- Class 14: Contact list exercice in Vue JS
 
 ## Technologies used
 - VueJS;
