@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Web - VueJS - Class 13</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+ 
+        </header>
+        <section class="container">
+            <section class="container__content">
+
+                <a :href="link" target="_blank">Link to Google</a>
+                <br>
+                <button @click="click">Click here</button>
+            </section>
+            <aside class="container__sidebar" >
+                 
+            </aside>
+        </section>
+        <footer class="footer">
+         
+        </footer>
+    </div>
+</body>
+
+<script>
+
+    const app = new Vue({
+        el: "#app", 
+        data:{
+
+            link: "http://www.google.pt",
+        
+        }, 
+        methods:{
+            click(){
+                alert("Event works");
+            },
+            
+        }
+    });
+
+</script>
+
+
+<style>
+    body {
+        font-family: Arial;
+        font-size:14px;
+    }
+    #app {
+        max-width:1024px;
+        margin:auto;
+    }
+    
+    .header {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .container {
+        display:flex;
+        min-height:400px;
+    }
+    .container__content {
+        flex:1;
+        background-color:#DDD;
+        padding:10px;
+    }
+    .container__sidebar {
+        width:300px;
+        background-color:#D1D1D1;
+        padding:10px;
+    }
+    
+    .footer {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .rotate { transform: rotate(-90deg)};
+    
+    
+    </style>
+    
+
+</html>
