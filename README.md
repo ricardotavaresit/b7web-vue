@@ -13,7 +13,8 @@
 - Class 09: Components in Vue JS
 - Class 10: Life cycle in Vue JS
 - Class 11: Template: interpolation in Vue JS
-- Class 12: Template: directive shortcuts in Vue JS
+- Class 12: Template: directive in Vue JS
+- Class 13: Template: directive shortcuts in Vue JS
 
 ## Technologies used
 - VueJS;
