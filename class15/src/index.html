@@ -15,7 +15,14 @@
         <section class="container">
             <section class="container__content">
 
-                 
+                 <h1>Original name: {{ name }} </h1>
+
+                 <h1>Reverse name v1: {{  name.split("").reverse().join("") }} </h1>
+
+                 <h1>Reverse name v2: {{  reverseName }} </h1>
+
+                 <h1>Reverse name v3: {{  reverseNameM() }} </h1>
+             
             </section>
             <aside class="container__sidebar" >
                 
@@ -33,11 +40,18 @@
     const app = new Vue({
         el: "#app", 
         data:{
-        
+            name: "Ricardo"
         }, 
         methods:{
- 
+            reverseNameM(){
+                return this.name.split("").reverse().join("");
+            }
     
+        },
+        computed:{
+            reverseName(){
+                return this.name.split("").reverse().join("");
+            }
         }
     });
 
