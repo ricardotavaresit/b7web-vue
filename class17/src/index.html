@@ -15,10 +15,14 @@
         <section class="container">
             <section class="container__content">
 
+                <input type="text" v-model="calculation"> 
+
+                <span>{{warning}}</span>
                 
             </section>
             <aside class="container__sidebar" >
-
+                
+                {{ result }}
                  
             </aside>
         </section>
@@ -33,8 +37,31 @@
     const app = new Vue({
         el: "#app", 
         data:{
-           
+            calculation: "",
+            warning:"",
+            result:"",
+            timer: null
         }, 
+        methods:{
+          doCalculation(){
+            
+            this.warning = "";
+
+            this.result = eval(this.calculation)
+
+          }
+        },
+        watch:{
+            calculation(){
+                this.warning = "Typing";
+
+                if( this.timer ){
+                    clearTimeout( this.timer );
+                }
+
+                this.timer = setTimeout(this.doCalculation, 1000);
+            }
+        }
        
     });
 
