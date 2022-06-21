@@ -18,6 +18,7 @@
 - Class 14: Contact list exercice in Vue JS
 - Class 15: Computed proprieties in Vue JS
 - Class 16: Computed proprieties vs methods in Vue JS
+- Class 17: Watchers in Vue JS
 
 ## Technologies used
 - VueJS;
