@@ -19,6 +19,7 @@
 - Class 15: Computed proprieties in Vue JS
 - Class 16: Computed proprieties vs methods in Vue JS
 - Class 17: Watchers in Vue JS
+- Class 18: Watchers  vs computed in Vue JS
 
 ## Technologies used
 - VueJS;
