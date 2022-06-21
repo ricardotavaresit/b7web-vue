@@ -14,12 +14,15 @@
         </header>
         <section class="container">
             <section class="container__content">
-
-                
+                First Name: 
+                <input type="text" v-model="firstName">
+                <br>
+                Last Name: 
+                <input type="text" v-model="lastName"> 
             </section>
             <aside class="container__sidebar" >
                 
-            
+                Full name: {{fullName}}
                  
             </aside>
         </section>
@@ -34,13 +37,27 @@
     const app = new Vue({
         el: "#app", 
         data:{
- 
+            firstName:"",
+            lastName:"",
+          /*  fullName: "" */  
         }, 
         methods:{
           
         },
-        watch:{
-            
+     /*    watch:{
+            firstName(){
+                this.fullName = this.firstName + " " + this.lastName;
+            },
+            lastName(){
+                this.fullName = this.firstName + " " + this.lastName;
+            }
+        } */
+
+
+        computed:{
+            fullName(){
+                return this.firstName + " " + this.lastName;
+            }
         }
        
     });
