@@ -22,7 +22,7 @@
             </section>
             <aside class="container__sidebar" >
                 
-                Full name: {{fullName}}
+                <input v-model="fullName" />
                  
             </aside>
         </section>
@@ -39,24 +39,21 @@
         data:{
             firstName:"",
             lastName:"",
-          /*  fullName: "" */  
         }, 
         methods:{
           
         },
-     /*    watch:{
-            firstName(){
-                this.fullName = this.firstName + " " + this.lastName;
-            },
-            lastName(){
-                this.fullName = this.firstName + " " + this.lastName;
-            }
-        } */
-
 
         computed:{
-            fullName(){
-                return this.firstName + " " + this.lastName;
+            fullName:{
+                get(){
+                    return this.firstName + " " + this.lastName;
+                },
+                set(newValue){
+                    let names = newValue.split(" ");
+                    this.firstName =  names[0];
+                    this.lastName =  names[1];
+                }
             }
         }
        
