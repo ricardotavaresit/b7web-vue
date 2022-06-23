@@ -17,7 +17,7 @@
 
                 <input type="text" v-model="calculation"> 
 
-                <span>{{warning}}</span>
+                <span>{{ warning }}</span>
                 
             </section>
             <aside class="container__sidebar" >
@@ -48,8 +48,8 @@
             this.warning = "";
 
             this.result = eval(this.calculation)
-
-          }
+          },
+          
         },
         watch:{
             calculation(){
