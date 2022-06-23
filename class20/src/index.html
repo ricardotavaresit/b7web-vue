@@ -64,7 +64,12 @@
             showButton(){
                 this.warning = "";
 
-                this.buttonAdd = true;
+                
+                
+                if( this.person.length > 2 ){
+                    this.buttonAdd = true;
+                }
+                    
             } 
             
         },
