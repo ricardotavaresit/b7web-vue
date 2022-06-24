@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,15 @@
         <section class="container">
             <section class="container__content">
 
+                <h1>Version 1</h1>
+                <div v-bind:style="{ border:'2px solid #000000', backgroundColor: 'red', color:'#fff', 'font-size':'24px'}">
+                    {{ warning }}
+                </div>
+
+                <h1>Version 2</h1>
+                <div v-bind:style="[ mainStyles, warningStyles]">
+                    {{ warning }}
+                </div>
 
 
             </section>
@@ -34,8 +43,18 @@
     const app = new Vue({
         el: "#app", 
         data:{
-            errorMessage: "",
-            errorType:""
+            warning: "Any warning message",
+            mainStyles:{
+                border:'1px solid #000000', 
+                backgroundColor: '#00aaaa', 
+                color:'#fff', 
+                fontSize:'24px'
+            },
+            warningStyles:{
+                border:'5px solid #000000', 
+                color:'#fff', 
+                fontSize:'24px'
+            }
         }, 
         methods:{
             
