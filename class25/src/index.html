@@ -15,6 +15,18 @@
         <section class="container">
             <section class="container__content">
 
+                    <h2>Example with Array</h2>
+                    <div v-for="(person, index) in people"> 
+                        {{ index }} - {{ person.name }}
+                    </div>
+                    <hr>
+                    <h2>Example with Object</h2>
+                    <div v-for="(item, key, index) in object"> 
+                        {{ index }} - {{ key }} : {{ item }}
+                     
+                    </div>
+               
+
                  
             </section>
             <aside class="container__sidebar" >
@@ -33,6 +45,17 @@
     const app = new Vue({
         el: "#app", 
         data:{
+            people:[
+                {name:"Ricardo"},
+                {name:"Miguel"},
+                {name:"Pereira"},
+                {name:"Tavares"},
+            ], 
+            object:{
+                name:"Ricardo",
+                age: 25,
+                country:"Portugal"
+            }
            
         }, 
         methods:{
