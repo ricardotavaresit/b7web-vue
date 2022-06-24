@@ -15,7 +15,28 @@
         <section class="container">
             <section class="container__content">
 
-            
+                <h1>With v-if </h1>
+                <h1 v-if="win">You Win!</h1>
+                <h1 v-else>You Loose!</h1>
+                <hr>  
+                <h1>With v-show </h1>
+                <h1 v-show="win">You Win!</h1>
+                <h1 v-show="!win">You Loose!</h1>
+                <hr>  
+                <h1>With template </h1>
+                <template v-if="win">
+                    <h1>You Win!</h1>
+                    <small>Congratulations</small>
+                </template>
+                <template v-else-if="draw">
+                    <h1>You Draw!</h1>
+                    <small>Congratulations</small>
+                </template>
+                <template v-else>
+                    <h1>You Loose!</h1>
+                    <small>Sorry</small>
+                </template>
+                
             </section>
             <aside class="container__sidebar" >
                  
@@ -33,7 +54,8 @@
     const app = new Vue({
         el: "#app", 
         data:{
-           
+           win: false,
+           draw: true
         }, 
         methods:{
             
