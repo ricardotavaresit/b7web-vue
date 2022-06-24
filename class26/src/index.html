@@ -1,0 +1,103 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Web - VueJS - Class 26</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+ 
+        </header>
+        <section class="container">
+            <section class="container__content">
+
+                <h2>Example with Array</h2>
+                <ul>
+                    <li v-for="(person, index) in people"> 
+                        {{ index }} - {{ person }}
+                    </li>
+                </ul>
+                 
+            </section>
+            <aside class="container__sidebar" >
+                 
+                
+            </aside>
+        </section>
+        <footer class="footer">
+         
+        </footer>
+    </div>
+</body>
+
+<script>
+
+    const app = new Vue({
+        el: "#app", 
+        data:{
+            people:[ "Ricardo" ,"Miguel", "Pereira","Tavares"]
+    
+        }, 
+        methods:{
+            
+        },
+
+        computed:{
+      
+           
+        },
+
+        watch:{
+             
+        },
+   
+       
+    });
+
+</script>
+
+
+<style>
+    body {
+        font-family: Arial;
+        font-size:14px;
+    }
+    #app {
+        max-width:1024px;
+        margin:auto;
+    }
+    
+    .header {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .container {
+        display:flex;
+        min-height:400px;
+    }
+    .container__content {
+        flex:1;
+        background-color:#DDD;
+        padding:10px;
+    }
+    .container__sidebar {
+        width:300px;
+        background-color:#D1D1D1;
+        padding:10px;
+    }
+    
+    .footer {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+     
+    </style>
+    
+
+</html>
