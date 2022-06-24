@@ -22,6 +22,7 @@
 - Class 18: Watchers  vs computed in Vue JS
 - Class 19: Get and Set computed in Vue JS
 - Class 20: Exercise contacts in Vue JS
+- Class 21: Bind in class in Vue JS
 
 ## Technologies used
 - VueJS;
