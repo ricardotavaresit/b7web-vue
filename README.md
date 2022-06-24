@@ -25,6 +25,8 @@
 - Class 21: Bind in class in Vue JS
 - Class 22: Bind class with computed proprieties in Vue JS
 - Class 23: Bind inline in Vue JS
+- Class 24: Conditional rendering in Vue JS
+- Class 24: List render in Vue JS
 
 ## Technologies used
 - VueJS;
