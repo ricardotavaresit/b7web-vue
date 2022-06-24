@@ -29,6 +29,7 @@
 - Class 25: List render in Vue JS
 - Class 26: Array change detection in Vue JS
 - Class 27: Object change detection in Vue JS
+- Class 28: Filter result in array in Vue JS
 
 ## Technologies used
 - VueJS;
