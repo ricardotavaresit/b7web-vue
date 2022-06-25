@@ -14,10 +14,14 @@
         </header>
         <section class="container">
             <section class="container__content">
+
+                <div class="area" v-on:click.self.once="something">
+                    <button >Click here</button>
+                </div>
  
             </section>
             <aside class="container__sidebar" >
-
+                Count: {{count}}
           
                 
             </aside>
@@ -33,10 +37,12 @@
     const app = new Vue({
         el: "#app", 
         data:{
-           
+            count:0
         }, 
         methods:{
-            
+            something(){
+                this.count++;
+            }
         },
 
         computed:{
@@ -89,6 +95,11 @@
         background-color:#EEE;
     }
     
+    .area{
+        width: 200px;
+        height:100px;
+        background-color: aqua;
+    }
      
     </style>
     
