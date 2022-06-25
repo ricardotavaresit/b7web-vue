@@ -14,11 +14,12 @@
         </header>
         <section class="container">
             <section class="container__content">
-
-             
+                <input type="text" v-model="number">
+                <button v-on:click.prevent="increment">Click here</button>
             </section>
             <aside class="container__sidebar" >
-                 
+
+                Count: {{ count }}
                 
             </aside>
         </section>
@@ -33,11 +34,14 @@
     const app = new Vue({
         el: "#app", 
         data:{
-          
+            number:0,
+            count:0
     
         }, 
         methods:{
-            
+            increment(){
+                this.count += +this.number;
+            }
         },
 
         computed:{
