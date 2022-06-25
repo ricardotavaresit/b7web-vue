@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7Web - VueJS - Class 30</title>
+    <title>B7Web - VueJS - Class 31</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
@@ -15,12 +15,23 @@
         <section class="container">
             <section class="container__content">
 
-           
+                <h3>Verion 1</h3>
+                <input type="text" v-on:keyUp="typingVersionOne($event)">
+
+                <h3>Verion 2</h3>
+                <input type="text" v-on:keyUp.13="typingVersionTwo()">
+
+                <h3>Verion 3</h3>
+                <input type="text" v-on:keyUp.f12="typingVersionTree()">
+
  
             </section>
             <aside class="container__sidebar" >
-         
-                
+            
+                <p> Count One: {{ countOne }} </p> 
+                <p> Count Two: {{ countTwo }} </p>
+                <p> Count Tree: {{ countTree }} </p>
+
             </aside>
         </section>
         <footer class="footer">
@@ -31,13 +42,26 @@
 
 <script>
 
+   Vue.config.keyCodes.f12 = 123;
+
     const app = new Vue({
         el: "#app", 
         data:{
-            
+            countOne: 0,
+            countTwo: 0,
+            countTree: 0
         }, 
         methods:{
-       
+            typingVersionOne(e){
+                console.log(e.keyCode);
+                e.keyCode == 13 && this.countOne++;
+            },
+            typingVersionTwo(){
+                this.countTwo++;
+            },
+            typingVersionTree(){
+                this.countTree++;
+            }
         },
 
         computed:{
