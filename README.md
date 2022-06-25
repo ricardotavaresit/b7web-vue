@@ -33,6 +33,7 @@
 - Class 29: v-on:click in Vue JS
 - Class 30: self and once in Vue JS
 - Class 31: v-on:keyUp in Vue JS
+- Class 32: v-on events with ctrl, shift, etc in Vue JS
 
 ## Technologies used
 - VueJS;
