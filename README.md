@@ -31,6 +31,7 @@
 - Class 27: Object change detection in Vue JS
 - Class 28: Filter result in array in Vue JS
 - Class 29: v-on:click in Vue JS
+- Class 30: self and once in Vue JS
 
 ## Technologies used
 - VueJS;
