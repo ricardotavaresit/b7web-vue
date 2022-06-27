@@ -21,8 +21,14 @@
                 <h3>Checkbox</h3>
                 <input type="checkbox" v-model="selected"> Selected: {{ selected }} 
                 <hr>
+                <h3>Array</h3>
      
+                <input type="checkbox" value="Ricardo" v-model="names"/>  Ricardo <br>
+                <input type="checkbox" value="Miguel" v-model="names"/> Miguel <br>
+                <input type="checkbox" value="Pereira" v-model="names"/>  Pereira <br>
+                <input type="checkbox" value="Tavares" v-model="names"/>  Tavares <br>
 
+                <p>{{names}}</p>
             </section>
             <aside class="container__sidebar" >
             
