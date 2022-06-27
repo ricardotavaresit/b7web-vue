@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7Web - VueJS - Class 33</title>
+    <title>B7Web - VueJS - Class 34</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
@@ -22,13 +22,23 @@
                 <input type="checkbox" v-model="selected"> Selected: {{ selected }} 
                 <hr>
                 <h3>Array</h3>
-     
+                
                 <input type="checkbox" value="Ricardo" v-model="names"/>  Ricardo <br>
                 <input type="checkbox" value="Miguel" v-model="names"/> Miguel <br>
                 <input type="checkbox" value="Pereira" v-model="names"/>  Pereira <br>
                 <input type="checkbox" value="Tavares" v-model="names"/>  Tavares <br>
-
+                
                 <p>{{names}}</p>
+
+                <hr>
+                <h3>Radio botton</h3>
+                <input type="radio" name="group" value="yes" v-model="group"/>  
+                <input type="radio" name="group" value="no" v-model="group"/> 
+                <p>Group: {{group}}</p>
+        
+                <hr>
+
+
             </section>
             <aside class="container__sidebar" >
             
@@ -50,12 +60,12 @@
     const app = new Vue({
         el: "#app", 
         data:{
-            
+            message: "",
+            selected: false,
+            names: [],
+            group: "yes"
         }, 
         methods:{
-            typing(){
-                this.count++;
-            },
       
         },
 
