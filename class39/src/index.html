@@ -1,0 +1,118 @@
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Web - VueJS - Class 39</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header" id="header"> 
+      
+            <h1>{{title}}</h1>
+            <count-component></count-component>
+            <top-menu-component></top-menu-component>
+        
+        </header>
+        <section class="container">
+            <section class="container__content">
+                
+            </section>
+            <aside class="container__sidebar" id="side-bar" >
+                
+                <h1>{{title}}</h1>
+                <count-component></count-component>
+                <top-menu-component></top-menu-component>
+            </aside>
+        </section>
+        <footer class="footer">
+         
+        </footer>
+    </div>
+</body>
+
+<script>
+
+    Vue.component('count-component', {
+        template: "<button v-on:click='message'>Click here</button>", 
+        methods:{
+            message(){
+                alert("Hi");
+            }
+        }
+    });
+
+
+    const topMenu = {
+        template: "<span>Menu</span>"
+    }
+ 
+
+    const header = new Vue({
+        el: "#header", 
+        data:{
+            title: "Title of website"
+        }, 
+        components:{
+            'top-menu-component':topMenu
+        }
+    });
+    
+    
+    const sideBar = new Vue({
+        el: "#side-bar", 
+        data:{
+            title: "sideBar of website"
+        }
+    });
+
+</script>
+
+
+<style>
+    body {
+        font-family: Arial;
+        font-size:14px;
+    }
+    #app {
+        max-width:1024px;
+        margin:auto;
+    }
+    
+    .header {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .container {
+        display:flex;
+        min-height:400px;
+    }
+    .container__content {
+        flex:1;
+        background-color:#DDD;
+        padding:10px;
+    }
+    .container__sidebar {
+        width:300px;
+        background-color:#D1D1D1;
+        padding:10px;
+    }
+    
+    .footer {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .area{
+        width: 200px;
+        height:100px;
+        background-color: aqua;
+    }
+     
+    </style>
+    
+
+</html>
