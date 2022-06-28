@@ -37,6 +37,7 @@
 - Class 33: v-on events with ctrl, shift mouse in Vue JS
 - Class 33: v-on events with ctrl, shift mouse in Vue JS
 - Class 34: v-model in Vue JS
+- Class 35: v-model object in Vue JS
 
 ## Technologies used
 - VueJS;
