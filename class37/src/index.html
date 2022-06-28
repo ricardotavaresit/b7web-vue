@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <header class="header">
- 
+            <top-menu>  </top-menu>
         </header>
         <section class="container">
             <section class="container__content">
@@ -30,8 +30,18 @@
 
 <script>
 
+    Vue.component('top-menu', {
+        data(){
+            return {
+                text: "Some text"
+            }
+        },
+        template: "<button> {{ text }} </button>" 
+    })
+
     const app = new Vue({
         el: "#app", 
+
         data:{
      
         }, 
