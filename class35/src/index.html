@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7Web - VueJS - Class 34</title>
+    <title>B7Web - VueJS - Class 35</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
@@ -15,8 +15,18 @@
         <section class="container">
             <section class="container__content">
 
-                
+                <input type="checkbox" v-model="checked" true-value="sim" false-value="Não">
 
+                <p>Checked: {{checked}}</p>
+
+                <hr>
+
+                <select v-model="selected">
+                    <option v-bind:value="{name:'Ricardo', age:30}">Option One</option>
+                    <option v-bind:value="{name:'Miguel', age:40}">Option Two</option>
+                    <option v-bind:value="{name:'Pereira', age:50}">Option Tree</option>
+                </select>
+                <p>selected: {{selected}}</p>
             </section>
             <aside class="container__sidebar" >
             
@@ -36,7 +46,8 @@
     const app = new Vue({
         el: "#app", 
         data:{
-           
+            checked: "Não", 
+            selected: ""
         }, 
         methods:{
       
