@@ -35,9 +35,29 @@
                 <input type="radio" name="group" value="yes" v-model="group"/>  
                 <input type="radio" name="group" value="no" v-model="group"/> 
                 <p>Group: {{group}}</p>
-        
                 <hr>
 
+                <h3>Select V1</h3>
+                <select v-model="option">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <p>Option: {{option}}</p>
+                
+                
+                <h3>Select V2 - Array</h3>
+                <select v-model="option">
+                    <option v-bind:key="index" v-for="(item, index) in optionsArray "> {{item}}</option>
+                </select>
+                <p>Options: {{option}}</p>
+
+
+                <h3>Select V3 - Objet</h3>
+                <select v-model="option">
+                    <option v-bind:key="index" v-for="(item, index) in optionsObject "> {{item.name}}</option>
+                </select>
+                <p>Options: {{option}}</p>
 
             </section>
             <aside class="container__sidebar" >
@@ -63,7 +83,14 @@
             message: "",
             selected: false,
             names: [],
-            group: "yes"
+            group: "yes",
+            option: "B", 
+            optionsArray:["One", "Two", "Tree"], 
+            optionsObject:[
+                {name: "One"},
+                {name: "Two"},
+                {name: "Tree"},
+            ]
         }, 
         methods:{
       
