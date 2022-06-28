@@ -39,6 +39,7 @@
 - Class 34: v-model in Vue JS
 - Class 35: v-model object in Vue JS
 - Class 36: v-model.number and v-model.trim in Vue JS
+- Class 37: Create component in Vue JS
 
 ## Technologies used
 - VueJS;
