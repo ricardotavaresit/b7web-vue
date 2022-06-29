@@ -42,6 +42,7 @@
 - Class 37: Create component in Vue JS
 - Class 38: Create component and events in Vue JS
 - Class 39: Global component vs local component and events in Vue JS
+- Class 40: Global component vs local component and events in Vue JS
 
 ## Technologies used
 - VueJS;
