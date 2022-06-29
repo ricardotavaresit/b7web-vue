@@ -37,7 +37,16 @@
 
     const post = {
         props:["title", "content"],
-        template: `<div><h2>{{title}}</h2><p>{{content}}</p></div>`
+        data() {
+            return{
+                example:"Footer"
+            }
+        },
+        template: ` <div>
+                        <h2>{{title}}</h2>
+                        <p>{{content}}</p>
+                        <p>{{example}}</p>
+                    </div>`
     }
 
 
