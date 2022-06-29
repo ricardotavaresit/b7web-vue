@@ -1,0 +1,104 @@
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Web - VueJS - Class 40</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header" id="header"> 
+      
+            
+        </header>
+        <section class="container">
+            <section class="container__content" id="content">
+
+                <post title="Title One" content="Content One"></post>
+                <post title="Title Two" content="Content Two"></post>
+                <post title="Title Tree" content="Content Tree"></post>
+           
+                
+            </section>
+            <aside class="container__sidebar" >
+                
+        
+            </aside>
+        </section>
+        <footer class="footer">
+         
+        </footer>
+    </div>
+</body>
+
+<script>
+
+    const post = {
+        props:["title", "content"],
+        template: `<div><h2>{{title}}</h2><p>{{content}}</p></div>`
+    }
+
+
+    const content = new Vue({
+        el: "#content", 
+        data:{
+             
+        }, 
+        components:{
+            post
+        }
+    });
+    
+    
+  
+
+</script>
+
+
+<style>
+    body {
+        font-family: Arial;
+        font-size:14px;
+    }
+    #app {
+        max-width:1024px;
+        margin:auto;
+    }
+    
+    .header {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .container {
+        display:flex;
+        min-height:400px;
+    }
+    .container__content {
+        flex:1;
+        background-color:#DDD;
+        padding:10px;
+    }
+    .container__sidebar {
+        width:300px;
+        background-color:#D1D1D1;
+        padding:10px;
+    }
+    
+    .footer {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .area{
+        width: 200px;
+        height:100px;
+        background-color: aqua;
+    }
+     
+    </style>
+    
+
+</html>
