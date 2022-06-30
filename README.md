@@ -45,6 +45,7 @@
 - Class 40: Props in Vue JS
 - Class 41: Slots in Vue JS
 - Class 42: Executing functions outside the component in Vue JS
+- Class 43: To-do with components 1/2 in Vue JS
 
 ## Technologies used
 - VueJS;
