@@ -44,6 +44,7 @@
 - Class 39: Global component vs local component and events in Vue JS
 - Class 40: Props in Vue JS
 - Class 41: Slots in Vue JS
+- Class 42: Executing functions outside the component in Vue JS
 
 ## Technologies used
 - VueJS;
