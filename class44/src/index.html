@@ -40,15 +40,20 @@
     }
 
     const content = new Vue({
-        el: "#content", 
+        el: "#header", 
         data:{
-            openAnswer: true, 
-            titleAnswer: ""
+ 
         }, 
         methods:{
-        
+            addItem(){
+                alert("Hi content");
+            }
         },
         components:{
+            "add-to-do": addToDo
+        }
+      
+    });
     const aside = new Vue({
         el: "#aside", 
         data(){
