@@ -10,16 +10,18 @@
 <body>
     <div id="app">
         <header class="header" id="header"> 
-      
+            <add-to-do v-on:add="addItem"></add-to-do>
+            
         </header>
         <section class="container">
-            <section class="container__content" id="content">
+            <section class="container__content">
  
-                
-               
             </section>
-            <aside class="container__sidebar" >
-                
+            <aside class="container__sidebar" id="aside">
+
+                 <ul>
+                    <li v-bind:key="index" v-for="(item, index) in items">{{item}}</li>
+                 </ul>
         
             </aside>
         </section>
@@ -31,12 +33,12 @@
 
 <script>
 
-    const post = {
-        props:["title"], 
-        methods:{
-            
-        },
+    const addToDo = {
        
+        template:   `<div>
+                        <input type="text" placeholder="Write any thing">
+                        <button v-on:click.prevent="addItem">Add</button>
+                    </div>`
     }
 
     const content = new Vue({
@@ -54,6 +56,7 @@
         }
       
     });
+
     const aside = new Vue({
         el: "#aside", 
         data(){
@@ -62,6 +65,9 @@
             }
         }
     });
+
+
+
     
 </script>
 
