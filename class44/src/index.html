@@ -31,11 +31,23 @@
 
 <script>
 
-    const addToDo = {
-       
+    Vue.component('add-to-do', {
+        data(){
+            return{
+                text: ''
+            }
+        },
         template:   `<div>
-                        <input type="text" placeholder="Write any thing">
-                        <button v-on:click.prevent="addItem">Add</button>
+                        <input type="text" v-model="text" placeholder="Write any thing">
+                        <button v-on:click="addEvent">Add</button>
+                    </div>`, 
+        methods:{
+            addEvent(){
+                this.$emit('add', this.text);
+            }
+        }
+
+    });
                     </div>`
     }
 
