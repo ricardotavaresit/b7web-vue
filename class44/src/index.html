@@ -11,6 +11,8 @@
     <div id="app">
         <header class="header" id="header"> 
             <add-to-do v-on:add="AddToDoItem"></add-to-do>
+
+            
             
         </header>
         <section class="container">
@@ -20,7 +22,7 @@
             <aside class="container__sidebar" id="aside">
 
                 <list-elements v-bind:items="items"></list-elements>
-        
+
             </aside>
         </section>
         <footer class="footer">
@@ -48,31 +50,46 @@
         }
 
     });
-                    </div>`
-    }
 
-    const content = new Vue({
+
+    const listElements = {
+        props:["items"],
+        template:`  
+            <div>
+                <ul>
+                    <li v-bind:key="index" v-for="(item, index) in items">{{item}}</li>
+                </ul>
+            </div>`
+
+    };
+
+  
+     const header = new Vue({
         el: "#header", 
-        data:{
  
-        }, 
         methods:{
-            addItem(){
-                alert("Hi content");
-            }
-        },
-        components:{
-            "add-to-do": addToDo
+            AddToDoItem(text){
+                
+                aside.addItem(text);
+            }  
         }
       
-    });
+    });  
 
     const aside = new Vue({
         el: "#aside", 
         data(){
             return{
-                items: ["Item 1", "Item 2", "Item 3"]
+                items: ["Item 1", "Item 2", "Item 4"]
             }
+        }, 
+        methods:{
+            addItem(item){
+                this.items.push(item);
+            }
+        },
+        components:{
+            "list-elements" : listElements
         }
     });
 
