@@ -10,10 +10,9 @@
 <body>
     <div id="app">
         <header class="header" id="header"> 
-            <add-to-do v-on:add="AddToDoItem"></add-to-do>
 
-            
-            
+            <add-to-do v-on:add_event="AddToDoItem"></add-to-do>
+
         </header>
         <section class="container">
             <section class="container__content">
@@ -41,11 +40,11 @@
         },
         template:   `<div>
                         <input type="text" v-model="text" placeholder="Write any thing">
-                        <button v-on:click="addEvent">Add</button>
+                        <button v-on:click="add">Add</button>
                     </div>`, 
         methods:{
-            addEvent(){
-                this.$emit('add', this.text);
+            add(){
+                this.$emit('add_event', this.text);
             }
         }
 
