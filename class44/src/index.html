@@ -19,9 +19,7 @@
             </section>
             <aside class="container__sidebar" id="aside">
 
-                 <ul>
-                    <li v-bind:key="index" v-for="(item, index) in items">{{item}}</li>
-                 </ul>
+                <list-elements v-bind:items="items"></list-elements>
         
             </aside>
         </section>
