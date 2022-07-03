@@ -1,0 +1,66 @@
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Web - VueJS - Class 45</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+         
+        <traffic-light></traffic-light>
+     
+    </div>
+</body>
+
+<script>
+
+    Vue.component("traffic-light", {
+   
+        template: `<div class="traffic-light-body">   </div>`
+    });
+
+
+    const trafficLight = new Vue({
+        el: "#app", 
+        data(){
+            return {
+                title: "Hi Traffic ligth"
+            }
+        }, 
+        components:{
+
+        }
+    });
+ 
+ 
+    
+</script>
+
+
+<style>
+    #app {
+
+        display: flex;  
+ 
+        justify-content: center;  
+        align-items: center;  
+        height: 600px;
+
+    }
+
+    .traffic-light-body {
+        display: flex;  
+        width: 300px;
+       
+        background-color: #37373b;
+        border-radius: 100px;
+    }
+
+
+    </style>
+    
+
+</html>
