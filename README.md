@@ -47,6 +47,7 @@
 - Class 42: Executing functions outside the component in Vue JS
 - Class 43: To-do with components 1/2 in Vue JS
 - Class 44: To-do with components 2/2 in Vue JS
+- Class 45: Traffic Light exercise in Vue JS
 
 ## Technologies used
 - VueJS;
