@@ -9,30 +9,84 @@
 </head>
 <body>
     <div id="app">
+
+        <header class="header" id="header"> 
+            <h1>Traffic Light</h1>
+        </header>
+        <section class="container">
+            <section class="container__content" id="content">
+ 
+                <traffic-light-component>
+                    <light-component v-bind:color="{'red-light':red}"></light-component>
+                    <light-component color="yellow-light"></light-component>
+                    <light-component ></light-component>
+                </traffic-light-component>
+               
+            </section>
+            <aside class="container__sidebar" >
+                <h1 class="title-controls">Controls</h1>
+                <div>
+                    <button class="bt-start">Start</button>
+                    <button class="bt-stop">STOP</button>
+                </div>
+            </aside>
+        </section>
+        <footer class="footer">
          
-        <traffic-light></traffic-light>
+        </footer>
+
+         
+        
      
     </div>
 </body>
 
 <script>
 
-    Vue.component("traffic-light", {
-   
-        template: `<div class="traffic-light-body">   </div>`
+    Vue.component("traffic-light-component", {
+        template: `<div class="traffic-light-body"><slot></slot></div>`
     });
 
+    Vue.component("light-component", {
+        props:["color"],
+        template:`<div class="light" v-bind:class="color"></div>`
+    });
 
     const trafficLight = new Vue({
         el: "#app", 
         data(){
             return {
-                title: "Hi Traffic ligth"
+                red: false,
+                yellow: false,
+                green: false,
             }
         }, 
-        components:{
 
+        methods:{
+
+
+        },
+ 
+        watch:{
+
+        }, 
+
+        computed:{
+
+            getColorLight(){
+                if( this.red ){
+
+                }
+                
+                return this.red ? "red-light" : "";
+
+
+            }
+     
+         /*        yellow: false,
+                green: false, */
         }
+
     });
  
  
@@ -41,22 +95,106 @@
 
 
 <style>
-    #app {
 
-        display: flex;  
- 
-        justify-content: center;  
-        align-items: center;  
-        height: 600px;
+    body 
+    {
+        font-family: Arial;
+        font-size:14px;
+    }
+    #app {
+        max-width:1024px;
+        margin:auto;
+    }
+    
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .container {
+        display:flex;
+        min-height:400px;
+    }
+    .container__content {
+        display: flex;
+        flex:1;
+        background-color:#DDD;
+        padding:10px;
+        align-content: center;
+        justify-content:center;
 
     }
+    .container__sidebar {
+
+        display: flex;
+        flex:1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color:#D1D1D1;
+        padding:10px 0 50px 0;
+  
+    }
+
+    .title-controls{
+        font-size: 35px;;
+    }
+    
+    .footer {
+        min-height:100px;
+        background-color:#EEE;
+    }
+    
+    .warning{
+        border: 2px solid #000;
+        padding: 20px;
+        background-color: #ff0000;
+        color: #ffffff;
+    }
+
 
     .traffic-light-body {
-        display: flex;  
-        width: 300px;
-       
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-direction: column; 
+        justify-content: space-around;
+        width: 100px;
         background-color: #37373b;
-        border-radius: 100px;
+        border-radius: 40px;
+        padding: 30px 0px;
+    }
+
+
+    .light{
+        width: 70px;
+        height:70px;
+        background-color: rgb(78, 74, 74);
+        border-radius: 35px;
+        margin: 10px;
+        border: 1px solid rgb(186, 186, 194) 
+    }
+    .red-light{
+        background-color: red;
+    }
+    .yellow-light{
+        background-color: yellow
+    }
+    .green-light{
+        background-color: green
+    }
+
+    .bt-start{
+        padding: 10px 20px;
+        background-color: #00ff007e;
+    }
+    
+    .bt-stop{
+        padding: 10px 20px;
+        background-color: #d82c1fd7;
     }
 
 
