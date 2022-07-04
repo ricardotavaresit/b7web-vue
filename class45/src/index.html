@@ -14,7 +14,7 @@
             <h1>Traffic Light</h1>
         </header>
         <section class="container">
-            <section class="container__content" id="content">
+            <section class="container__content" id="content" v-model="changeColor">
  
                 <traffic-light-component>
                     <light-component v-bind:color="{'red-light':red}"></light-component>
@@ -49,6 +49,7 @@
 
     Vue.component("light-component", {
         props:["color"],
+        
         template:`<div class="light" v-bind:class="color"></div>`
     });
 
@@ -59,15 +60,25 @@
                 red: false,
                 yellow: false,
                 green: false,
+                timer: null
             }
         }, 
 
         methods:{
-
-
+            algo(){
+                alert("Hi");
+            }
         },
  
         watch:{
+            changeColor(){
+           
+           if( this.timer ){
+              // clearTimeout( this.timer );
+           }
+
+          // this.timer = setTimeout(this.algo, 1000);
+       }
 
         }, 
 
@@ -77,7 +88,7 @@
                 if( this.red ){
 
                 }
-                
+
                 return this.red ? "red-light" : "";
 
 
