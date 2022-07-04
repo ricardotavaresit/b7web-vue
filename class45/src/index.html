@@ -14,7 +14,7 @@
             <h1>Traffic Light</h1>
         </header>
         <section class="container">
-            <section class="container__content" id="content" v-model="changeColor">
+            <section class="container__content" id="content">
  
                 <traffic-light-component>
                     <light-component v-bind:color="{'red-light':red}"></light-component>
@@ -26,8 +26,8 @@
             <aside class="container__sidebar" >
                 <h1 class="title-controls">Controls</h1>
                 <div>
-                    <button class="bt-start">Start</button>
-                    <button class="bt-stop">STOP</button>
+                    <button class="bt-open" v-on:click="open">OPEN</button>
+                    <button class="bt-close" v-on:click="close">STOP</button>
                 </div>
             </aside>
         </section>
@@ -57,30 +57,30 @@
         el: "#app", 
         data(){
             return {
-                red: false,
-                yellow: false,
-                green: false,
-                timer: null
+                ligthStatus : "" 
             }
         }, 
 
         methods:{
-            algo(){
-                alert("Hi");
+            open(){
+                alert("open");
+            },
+            close(){
+                alert("close");
             }
         },
  
         watch:{
-            changeColor(){
+         /*    changeColor(){
            
            if( this.timer ){
              
            }
 
-          this.timer = setTimeout(this.algo, 1000);
-       }
+          this.timer = setTimeout(this.algo, 1000); */
+       },
 
-        }, 
+       
 
         computed:{
 
@@ -198,12 +198,12 @@
         background-color: green
     }
 
-    .bt-start{
+    .bt-open{
         padding: 10px 20px;
         background-color: #00ff007e;
     }
     
-    .bt-stop{
+    .bt-close {
         padding: 10px 20px;
         background-color: #d82c1fd7;
     }
