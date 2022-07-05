@@ -26,8 +26,8 @@
             <aside class="container__sidebar" >
                 <h1 class="title-controls">Controls</h1>
                 <div>
-                    <button class="bt-open" v-on:click="open">OPEN</button>
-                    <button class="bt-close" v-on:click="close">STOP</button>
+                    <button v-if="ligthStatus == 'red'" class="bt-open" v-on:click="open">OPEN</button>
+                    <button v-else class="bt-close" v-on:click="close">STOP</button>
                 </div>
             </aside>
         </section>
