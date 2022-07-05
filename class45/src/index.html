@@ -9,17 +9,15 @@
 </head>
 <body>
     <div id="app">
-
         <header class="header" id="header"> 
             <h1>Traffic Light</h1>
         </header>
         <section class="container">
             <section class="container__content" id="content">
  
-                <traffic-light-component>
-                    <light-component v-bind:color="{'red-light':red}"></light-component>
-                    <light-component color="yellow-light"></light-component>
+                <traffic-light-component v-bind:status="ligthStatus">
                     <light-component ></light-component>
+                   
                 </traffic-light-component>
                
             </section>
@@ -34,10 +32,6 @@
         <footer class="footer">
          
         </footer>
-
-         
-        
-     
     </div>
 </body>
 
@@ -67,54 +61,34 @@
     Vue.component("light-component", {
         props:["color"],
         
-        template:`<div class="light" v-bind:class="color"></div>`
+        template:`  <div class="light" v-bind:class="color">
+                    </div>`
     });
 
     const trafficLight = new Vue({
         el: "#app", 
         data(){
             return {
-                ligthStatus : "" 
+                ligthStatus : "green" 
             }
         }, 
 
         methods:{
             open(){
-                alert("open");
+                this.ligthStatus = "green" 
             },
             close(){
-                alert("close");
+                this.ligthStatus = "yellow"
+
+                setTimeout( () => this.ligthStatus = "red" , 1000);
             }
         },
- 
         watch:{
-         /*    changeColor(){
-           
-           if( this.timer ){
-             
-           }
-
-          this.timer = setTimeout(this.algo, 1000); */
+ 
        },
-
-       
-
         computed:{
 
-            getColorLight(){
-                if( this.red ){
-
-                }
-
-                return this.red ? "red-light" : "";
-
-
-            }
-     
-         /*        yellow: false,
-                green: false, */
         }
-
     });
  
  
@@ -205,13 +179,13 @@
         margin: 10px;
         border: 1px solid rgb(186, 186, 194) 
     }
-    .red-light{
+    .red{
         background-color: red;
     }
-    .yellow-light{
+    .yellow{
         background-color: yellow
     }
-    .green-light{
+    .green{
         background-color: green
     }
 
@@ -224,8 +198,6 @@
         padding: 10px 20px;
         background-color: #d82c1fd7;
     }
-
-
     </style>
     
 
