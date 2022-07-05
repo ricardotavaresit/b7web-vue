@@ -44,7 +44,24 @@
 <script>
 
     Vue.component("traffic-light-component", {
-        template: `<div class="traffic-light-body"><slot></slot></div>`
+        props:["status"],
+        template: ` <div class="traffic-light-body">
+                        <template v-if="status == 'red'">
+                            <light-component color="red"></light-component>
+                            <light-component></light-component>
+                            <light-component></light-component>
+                        </template>
+                        <template v-else-if="status == 'yellow'">
+                            <light-component></light-component>
+                            <light-component color="yellow" ></light-component>
+                            <light-component></light-component>
+                        </template>
+                        <template v-else-if="status == 'green'">
+                            <light-component></light-component>
+                            <light-component></light-component>
+                            <light-component color="green"></light-component>
+                        </template>
+                    </div>`
     });
 
     Vue.component("light-component", {
