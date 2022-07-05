@@ -48,7 +48,7 @@
 - Class 43: To-do with components 1/2 in Vue JS
 - Class 44: To-do with components 2/2 in Vue JS
 - Class 45: Traffic Light exercise in Vue JS
-- Class 49: Traffic Light resolution in Vue JS1
+- Class 49: Traffic Light resolution in Vue JS
 
 ## Technologies used
 - VueJS;
