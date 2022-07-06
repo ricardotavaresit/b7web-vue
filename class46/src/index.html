@@ -16,8 +16,9 @@
             <section class="container__content" id="content">
                 
                 <search-component></search-component>
-                
+
                 <list-component></list-component>
+                
                
             </section>
             <aside class="container__sidebar" >
@@ -43,6 +44,8 @@
                         </form>
                     </div>`
     });
+
+
     Vue.component('list-component', {
         template:`  <div>
                         <table >
@@ -50,9 +53,10 @@
                                 <th>Name</th>
                                 <th>Price</th>
                             </tr>
-                            <tr v-for="">
-                                <th>Name</th>
-                                <th>Price</th>
+                            <tr v-for="(item, index) in items" v-bind:key="index">
+                                <th>{{item.group}}</th>
+                                <th></th>
+                                <product/>
                             </tr>
                         </table>
                     </div>`,
