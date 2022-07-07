@@ -49,6 +49,7 @@
 - Class 44: To-do with components 2/2 in Vue JS
 - Class 45: Traffic Light exercise in Vue JS
 - Class 46: To-do with search exercise in Vue JS
+- Class 47: Instagem feed in Vue JS
 - Class 49: Traffic Light resolution in Vue JS
 
 ## Technologies used
