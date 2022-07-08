@@ -49,34 +49,43 @@
     Vue.component('list-component', {
         template:`  <div>
                         <table >
-                            <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-                            </tr>
-                            <tr v-for="(item, index) in items" v-bind:key="index">
-                                <th>{{item.group}}</th>
-                                <th></th>
-                                <product/>
-                            </tr>
+
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody v-for="item in lista">
+                                <tr>
+                                    <td><b>{{item.group}}</b></td>
+                                    <td> </td>
+                                </tr>
+                                <tr v-for="prod in item.items">
+                                    <td>{{prod.name}}</td>
+                                    <td>{{prod.price}}</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>`,
         data(){
             return {
-                items: [
+                lista: [
                     {
                         group: "Sporting Goods", 
                         items:[
-                            {name: "Football", price:"49.99"},
-                            {name: "Baseball", price:"9.99"},
-                            {name: "Baksetball", price:"29.99"},
+                            {name: "Football", price:"49.99€"},
+                            {name: "Baseball", price:"9.99€"},
+                            {name: "Baksetball", price:"29.99€"},
                         ]
                     },
                     {
                         group: "Eletronics", 
                         items:[
-                            {name: "iPod Touch", price:"99.99"},
-                            {name: "iPhone 5", price:"399.99"},
-                            {name: "Nexus 7", price:"199.99"},
+                            {name: "iPod Touch", price:"99.99€"},
+                            {name: "iPhone 5", price:"399.99€"},
+                            {name: "Nexus 7", price:"199.99€"},
                         ]
                     },
                 ]
