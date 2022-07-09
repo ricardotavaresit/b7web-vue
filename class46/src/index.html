@@ -78,21 +78,21 @@
     };
         data(){
             return {
-                lista: [
+                products: [
                     {
                         group: "Sporting Goods", 
                         items:[
-                            {name: "Football", price:"49.99€"},
-                            {name: "Baseball", price:"9.99€"},
-                            {name: "Baksetball", price:"29.99€"},
+                            {name: "Football", price:"49.99", stock:true},
+                            {name: "Baseball", price:"9.99", stock:true},
+                            {name: "Baksetball", price:"29.99", stock:false},
                         ]
                     },
                     {
                         group: "Eletronics", 
                         items:[
-                            {name: "iPod Touch", price:"99.99€"},
-                            {name: "iPhone 5", price:"399.99€"},
-                            {name: "Nexus 7", price:"199.99€"},
+                            {name: "iPod Touch", price:"99.99", stock:true},
+                            {name: "iPhone 5", price:"399.99", stock:false},
+                            {name: "Nexus 7", price:"199.99", stock:true},
                         ]
                     },
                 ]
