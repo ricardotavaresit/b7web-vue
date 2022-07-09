@@ -17,7 +17,7 @@
                 
                 <search-component></search-component>
 
-                <list-component></list-component>
+                <list-component v-bind:products="products"></list-component>
                 
                
             </section>
@@ -59,10 +59,10 @@
         props:["products"],
         template:`  <div>
                         <table >
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                            </tr>
                             <template v-for="item in products">
                                 <tr>
                                     <td colspan="2"><b>{{item.group}}</b></td>
@@ -71,13 +71,21 @@
                                     <td v-if="prod.stock">{{prod.name}}</td>
                                     <td v-else v-bind:class="'red'">{{prod.name}} €</td>
                                     <td>{{prod.price}} €</td>
-                                </tr>
+                                </tr> 
                             </template>
-                        </table>
+                        </table>  
                     </div>`,
     };
+ 
+
+
+
+    const app = new Vue({
+        el: "#content", 
+      
         data(){
             return {
+
                 products: [
                     {
                         group: "Sporting Goods", 
@@ -96,30 +104,14 @@
                         ]
                     },
                 ]
-            }
-        }
-    });
- 
-
-
-    const post = {
-        props:["title"], 
-        methods:{
-            
-        },
-       
-    }
-
-    const content = new Vue({
-        el: "#content", 
-        data:{
-            
+            }  
         }, 
         methods:{
         
         },
         components:{
-             
+            searchComponent, 
+            listComponent
         }
     });
     
@@ -166,6 +158,14 @@
         padding: 20px;
         background-color: #ff0000;
         color: #ffffff;
+    }
+
+    .red{
+        color:#ff0000;
+    }
+
+    .text-blue{
+        color:#0000ff;
     }
      
     </style>
