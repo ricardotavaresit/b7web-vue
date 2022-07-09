@@ -55,29 +55,27 @@
         }
     };
 
-    Vue.component('list-component', {
+    const listComponent = {
+        props:["products"],
         template:`  <div>
                         <table >
-
-                            <thead>
                                 <tr>
                                     <th>Name</th>
                                     <th>Price</th>
                                 </tr>
-                            </thead>
-
-                            <tbody v-for="item in lista">
+                            <template v-for="item in products">
                                 <tr>
-                                    <td><b>{{item.group}}</b></td>
-                                    <td> </td>
+                                    <td colspan="2"><b>{{item.group}}</b></td>
                                 </tr>
-                                <tr v-for="prod in item.items">
-                                    <td>{{prod.name}}</td>
-                                    <td>{{prod.price}}</td>
+                                <tr v-for="prod in item.items" >
+                                    <td v-if="prod.stock">{{prod.name}}</td>
+                                    <td v-else v-bind:class="'red'">{{prod.name}} €</td>
+                                    <td>{{prod.price}} €</td>
                                 </tr>
-                            </tbody>
+                            </template>
                         </table>
                     </div>`,
+    };
         data(){
             return {
                 lista: [
