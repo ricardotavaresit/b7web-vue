@@ -34,17 +34,26 @@
 
 <script>
 
-    Vue.component('search-component', {
+    const searchComponent = {
         template:`
                     <div>
                         <form>
-                            <input type="text" placeholder="search" />
+                            <input type="text" placeholder="search" v-model="search" v-on:keyUp="searching"/> {{search}}
                             <br>
-                            <input type="checkbox"  /> Only show produts in stock
+                            <input type="checkbox"/> Only show produts in stock
                         </form>
-                    </div>`
-    });
+                    </div>`,
+        data(){
+            return{
+                search:''
+            }
+        }, 
+        methods:{
+            searching(){
 
+            }
+        }
+    };
 
     Vue.component('list-component', {
         template:`  <div>
