@@ -17,7 +17,7 @@
                 
                 <search-component></search-component>
 
-                <list-component v-bind:products="products"></list-component>
+                <list-component v-bind:products="productsDisplayed"></list-component>
                 
                
             </section>
@@ -85,14 +85,13 @@
       
         data(){
             return {
-
                 products: [
                     {
                         group: "Sporting Goods", 
                         items:[
                             {name: "Football", price:"49.99", stock:true},
                             {name: "Baseball", price:"9.99", stock:true},
-                            {name: "Baksetball", price:"29.99", stock:false},
+                            {name: "Baksetball", price:"29.99", stock:false}
                         ]
                     },
                     {
@@ -103,7 +102,8 @@
                             {name: "Nexus 7", price:"199.99", stock:true},
                         ]
                     },
-                ]
+                ], 
+                productsDisplayed:[]
             }  
         }, 
         methods:{
@@ -112,6 +112,10 @@
         components:{
             searchComponent, 
             listComponent
+        }, 
+
+        created(){
+            this.productsDisplayed = this.products;
         }
     });
     
